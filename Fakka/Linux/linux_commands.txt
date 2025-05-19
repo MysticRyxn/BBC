@@ -1,0 +1,170 @@
+mkdir "map aanmaken"
+
+touch "bestand aanmaken"
+
+vi "bestande bewerken"
+
+useradd "gebruiker aanmaken"
+
+useradd -m "gebruiker aanmaken met home map"
+
+groupadd "groep aanmaken"
+
+groupadd -g "groep aanmaken met ID" voorbeeld: groupadd -g 500 groepnaam
+
+chown "map/bestand eigenaar wijzigen" voorbeeld: chown gebruikersnaam mapnaam
+
+chgrp "groep eigenaar wijzigen voorbeeld: chgrp groepnaam gebruikersnaam
+
+usermod -aG "gebruiker toevoegen aan een groep" voorbeeld: usermod -aG groepnaam gebruikersnaam
+
+gpasswd -d "gebruiker verwijderen uit de groep" voorbeeld: gpasswd gebruikersnaam groepnaam
+
+chmod "bestanden/map rechten wijzigen" voorbeeld: chmod 070 mapnaam #070 is een voorbeeld
+
+zypper install 'naam van de app'
+
+systemctl start 'naam van een service' "Services aanzetten
+
+systemctl stop 'naam van een service'
+
+systemctl restart 'naam van een service'
+
+systemctl enable 'naam van een service' "Je kan een service permanent aanzetten"
+
+firewall-cmd --add-service=samba --permanent "Samba service permanent toevoegen aan firewall zodat de services niet meer geblokkeerd worden"
+
+firewall-cmd --reload
+
+uitzondering samba server:
+
+setfacl -m g:groupB:r-x /home/samba/Test "Toegang verlenen aan bepaalde groep tot bepaalde map"
+
+setfacl -m o::--- /home/samba/Test "Geen toegang voor other"
+
+
+rsync = kopieert bestanden naar andere locatie en check of ze gewijzigd zijn
+-a = attributen van de bestanden worden meegenomen
+-v = je krijgt feedback na het kopiëren over wat er gekopieerd is
+
+--delete = delete bestanden
+
+crontab = vastgestelde tijden een command automatisch uit te laten voeren.
+
+minuten = 0-59
+uur van de dag = 0-24
+dag van de maand = 1-31
+maand van het jaar = 1-12
+dag van de week = 0-6 ( 0= zondag)
+
+crontab -l = lijst opvragen van alle crontabs waar jij rechten op hebt
+crontab -r = verwijder je het
+*/1 = het command voert het elke minuut uit
+
+mail = je ziet mails van crontab
+
+>> = de feedback van de nieuwe back-uo word automatisch toegevoegd aan de logfile
+
+she-bang = #!/bin/bash
+
+bash = bourne again shell
+
+env = je ziet alle standaard variabelen
+
+export = variabelen aanmaken
+
+env | grep *variabel* = check je het of het in de shell is
+
+unset distro = verwijder je het
+
+datum = +%d-%m-%y-$H:%M
+
+rpm -q samba = geeft antwoord of samba is geïnstalleerd is
+
+-eq = zijn ze gelijk
+-gt = is de eerste groter dan de tweede
+-it = is de eerste kleiner dan de tweede
+
+
+
+
+
+
+import csv # Hier importeer ik de csv bestanden.
+
+from datetime import datetime # Hierdoor kan ik de huidige datum printen.
+
+actuele_tijd = datetime.now()
+tijd = actuele_tijd.strftime("%Y-%m-%d %H:%M:%S") # Hier heb ik een variabele aangemaakt zodat de tijd word weergeven als je het programma start.
+
+print("= = = programma kentekensignalering gestart = = =", tijd ) # Hier krijg je te zien dat het programma gestart is en wat de huige tijd is.
+
+
+# Hier vraag ik of het bestand vals.txt leeg gemaakt moet worden.
+while True:
+    vals_leeg = input("Wil je het bestand vals.txt leegmaken? (j of n): ")
+
+    if vals_leeg == 'j':
+        with open("vals.txt", "w") as leeg:
+            print("Het bestand vals.txt is leeggemaakt.\n")
+        break  # Hier verlaat je de loop nadat je 'j' hebt ingevoerd.
+
+    elif vals_leeg == 'n':
+        print("Het bestand vals.txt wordt niet leeggemaakt.\n")
+        break  # Hier verlaat je de loop nadat je 'n' hebt ingevoerd.
+
+    else:
+        print("Ongeldige invoer. Voer alstublieft 'j' of 'n' in.") # Je blijft in de loop als je niks invoert
+
+
+
+vals = open("vals.txt", "a" if vals_leeg == 'n' else "w") # Het bestand vals.txt wordt in append- of write-modus geopend, 
+#afhankelijk van de gebruikerskeuze in vals_leeg, waarbij 'a' data toevoegt zonder te wissen en 'w' bestaande inhoud wist voordat nieuwe data wordt toegevoegd.
+
+
+aantal_kentekens = fout_kentekens = 0 # Beide waardes worden opgeslagen als 0.
+
+# Hier wordt het bestand 'GescandeData.csv' geopend in leesmodus.
+with open("GescandeData.csv", "r") as gescandeAuto:
+    for auto in gescandeAuto:
+        aantal_kentekens+=1
+        if len(auto) < 5:  #Als de lengte van de regel minder dan 5 tekens is, ga verder met de volgende regel.
+            continue
+
+#Hier wordt de regel op de komma's gesplit en slaat autoDelen op in een lijst.
+        autoDelen = auto.split(",")
+        if len(autoDelen) < 3: #Als de lijst minder dan 3 delen bevat ga je verder met de volgende regel.
+            continue
+
+        Auto_kenteken, Auto_merk, Auto_handelsbenaming = autoDelen[0], autoDelen[1], autoDelen[2].strip()
+
+        match = False
+
+        with open("RDW.csv", "r") as RDW:
+            for RDW_auto in RDW:
+                rdwAuto = RDW_auto.split(",")
+                if len(rdwAuto) < 4:
+                    continue
+
+                RDW_kenteken, RDW_merk, RDW_handelsbenaming = rdwAuto[0], rdwAuto[2], rdwAuto[3].strip()
+                if Auto_kenteken == RDW_kenteken:
+                    match = True
+                    break
+
+        if not match:
+            print(f"Onbekend kenteken: {Auto_kenteken}, {Auto_merk}, {Auto_handelsbenaming}")
+            vals.write(f"Onbekend,{Auto_kenteken},{Auto_merk},{Auto_handelsbenaming}\n")
+
+        else:
+            if Auto_merk != RDW_merk or Auto_handelsbenaming != RDW_handelsbenaming:
+                fout_kentekens += 1
+                print(f"Onjuist kenteken: {Auto_kenteken}, {Auto_merk}, {Auto_handelsbenaming}")
+                print(f"Geregistreerd op: {RDW_kenteken}, {RDW_merk}, {RDW_handelsbenaming}")
+                vals.write(f"Onjuist,{Auto_kenteken},{Auto_merk},{Auto_handelsbenaming}\n")
+
+vals.close()
+
+print("\nEindtotalen KentekenCheck:")
+print(f"Aantal correcte kentekens: {aantal_kentekens}\n",f"aantal onjuiste kentekens: {fout_kentekens}\n")
+
+print(f"= = = programma kentekensignalering afgesloten = = =", tijd)

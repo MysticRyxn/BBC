@@ -1,0 +1,25 @@
+su
+192:/home/student (dit is wat je ziet. in deze voorbeeld ga ik naar /home)
+cd /home
+mkdir ishan
+cd ishan
+touch test
+cd /home
+mkdir /tmp/backup
+mkdir code
+cd code 
+vi backup.sh
+#binbash
+LOGFILE="/tmp/backup/logfile$(date +'%Y-%m-%d_%H-%M-%S')"
+rsync -av /home/ishan /tmp/backup>>$LOGFILE 2>&1
+:wq! ( esc eerst. hier ga je uit de vi)
+cd /home/code
+chmod +x backup.sh (hierdoor is backup.sh uitvoerbaar. doe ls dan zie je een kleur)
+crontab -e ( om de crontab aan te maken)
+*/1 * * * * /home/code/backup.sh (nu voert hij elke minuut deze script uit en update hij ook de logfile)
+|   | | | |
+|   | | | ----- Day of the week (0 - 7) (Sunday = 0 or 7)
+|   | | ------- Month (1 - 12)
+|   | --------- Day of the month (1 - 31)
+|    ----------- Hour (0 - 23)
+------------- Minute (0 - 59)

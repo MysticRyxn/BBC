@@ -1,0 +1,67 @@
+#Opdracht 1:
+
+#Opdracht 2:
+
+import datetime
+
+#Get current date and time
+current_datetime = datetime.datetime.now()
+
+#Extract the date and time components
+current_date = current_datetime.date()
+current_time = current_datetime.time()
+
+#Print the date and time
+print("Current Date:", current_date)
+print("Current Time:", current_time)
+
+#Opdracht 3:
+
+keuze = input("Wil je het bestand vals.txt leegmaken? (j of n): ")
+
+if keuze.lower() == "j":
+    # Code om het bestand vals.txt leeg te maken
+    with open("vals.txt", "w") as f:
+        f.write("")
+        print("Het bestand vals.txt is leeggemaakt.")
+elif keuze.lower() == "n":
+    print("Het bestand vals.txt wordt niet leeggemaakt.")
+else:
+    print("Ongeldige keuze.")
+#In dit voorbeeld wordt de gebruiker gevraagd om "j" of "n" in te voeren om aan te geven of het bestand vals.txt moet worden leeggemaakt. 
+#Als de keuze "j" is, wordt het bestand leeggemaakt door het te openen in de schrijfmodus en een lege string te schrijven. 
+#Als de keuze "n" is, wordt het bestand niet leeggemaakt. Als de gebruiker een andere keuze invoert, wordt een foutmelding weergegeven.
+
+#Opdracht 4:
+
+def count_kentekens():
+   
+    correct_count = 0
+    incorrect_count = 0
+
+    with open("RDW.txt", "r") as rdw_file, open("correct.txt", "r") as correct_file, open("onjuist.txt", "r") as incorrect_file:
+        for line in rdw_file:
+            correct_count += 1
+
+        for line in correct_file:
+            correct_count += 1
+
+        for line in incorrect_file:
+            incorrect_count += 1
+
+    return correct_count, incorrect_count
+
+#Opdracht 5:
+
+import datetime
+
+#Get current date and time
+#current_datetime = datetime.datetime.now()
+
+#Extract the date and time components
+#current_date = current_datetime.date()
+#current_time = current_datetime.time()
+
+#Print the date and time
+print("Current Date:", current_date)
+print("Current Time:", current_time)

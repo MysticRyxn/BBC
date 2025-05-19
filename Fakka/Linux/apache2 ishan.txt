@@ -1,0 +1,31 @@
+su
+192:/home/student (dit is zie je. als voorbeeld ga ik naar home)
+cd /home
+systemctl stop firewalld.service (firewall uitzetten)
+zypper install apache2 ( apache2 installeren)
+cd /srv/www
+mkdir vhosts (hier zet je website naam in)
+cd vhosts
+mkdir "sitenaam.nl" 
+cd sitenaam.nl
+vi index.html
+"zet je tekst hier in"
+:wq! (eerst esc zo kom je uit de vi)
+cd /etc/apache2
+ls
+cd vhosts.d
+ls
+cp vhost.template "sitenaam.conf" (gebruikt geen .nl het moet .conf zijn)
+vi "sitenaam.conf"
+DOE ESC DAARNA
+:1,$ s/dummy-host.example.com/sitenaam.nl/g (dit doe je zodat alle dummyhost vervangen word in de template door je sitenaam)
+DAARNA ENTER
+:wq! (eerst esc zo kom je uit de vi)
+ip a (om je ip adres te zien)
+vi /etc/hosts
+hier moet je je eigen adress zetten onder de local host vergeet geen tab tussen de ip en sitenaam te zetten met de sitenaam voorbeeld:
+127.0.0.1    localhost
+192.168.67.172	ishan.nl
+:wq! (eerst esc zo kom je uit de vi)
+systemctl start apache2.service (om de apache2 te starten)
+nu kan je op firefox je website lokaal vinden zoals "sitenaam.nl"

@@ -1,0 +1,121 @@
+test
+
+ verslag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----Opdracht 1
+
+Open de Group Policy Management
+
+Klik rechter muis knop op Default Domain Policy en klik op Edit.
+Nu heb je de GPO editor voor je hier ga je de meeste opdrachten doen.
+
+Encryptie.
+1 Alle data op clients moeten voorzien zijn van encryptie.
+2 Alle klantgegevens moeten voorzien zijn van encryptie, intern en extern.
+Route: Computer Config\Policies\Administrative Templates\Windows Components\Bitlocker Drive Encryption\Fixed Data Drives
+
+
+Antivirus.
+1 Op elke client en server dient altijd een standaard antivirusoplossing werkzaam en up-to-date te zijn.
+Route: Computer Config\Policies\Administrative Templates\Windows Defender Antivirus
+
+2 Antivirusupdates mogen niet ouder zijn dan 24 uur.
+Route: Computer Config\Policies\Administrative Templates\Windows Defender Antivirus\signature updates
+
+3 Antivirusscans moeten minstens 2 keer per week op ieder gebruikersapparaat worden uitgevoerd.
+Route: Computer Config\Policies\Administrative Templates\Windows Defender Antivirus\scan
+
+4 Het is alleen voor domain administrators mogelijk om antivirusprogramma’s uit te zetten.
+Route: Zelfde instelling als opdracht 1
+
+
+Toegangsbeheer.
+1 Wachtword eisen.
+Route: Computer Config\Policies\Windows settings\Security Settings\Account Policies\Password Policy
+(LET OP! Niet alle eisen kunnen worden toegepast klik maar rechter muis knop op complexity requirements
+en dan properties en dan Explain.)
+
+2 Inlog tijden toestaan.
+Route: Open Active Directory User and Computers en ga naar de user die je wil checken het is mogelijk
+dat de users niet in de users map zitten. Klik rechter muis knop op de gebruiker en Properties en account en Logon Hours.
+
+3 Toegang tot gegevens/mappen
+Route: Ga naar de map via verkenner en kijk Properties en security.
+
+
+Persoonlijke omgevinge.
+1 Achtergrond settings
+Route: Open weer de GPO editor alleen ga nu naar User Configuratrion\Policies\Admin Tamplates\Desktop\Desktop
+Je kan het ook bij deze route(User Configuratrion\Policies\Admin Tamplates\Control panel\Personalization) aan passen
+maar voor meer info moet je zelf even de verschillen lezen door er op te kliken.
+
+2 screensaver.
+Route: User Configuratrion\Policies\Admin Tamplates\Control panel\Personalization.

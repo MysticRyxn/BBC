@@ -1,0 +1,18 @@
+Stap 0: Begin
+Stap 1: start melding programma
+Stap 2: auto staat voor de slagboom
+Stap 3: scant de kleur,merk,kenteken van de auto
+Stap 4: gegevens worden opgeslagen in auto.csv
+Stap 5: gegevens worden gecontroleerd in rdw.csv of de gegevens overeen komen
+Stap 6: komt data overeen met auto.csv. R
+Stap 7: JA: kenteken komt overeen met rdw.csv
+Stap 8: print oke u mag doorrijden Fijne dag nog (slagboom gaat omhoog)
+Stap 9: NEE: kenteken komt niet overeen met auto.csv
+Stap 10: print op scherm verschil met lijst met geobserveerde eigenschappen versus de
+geregistreerde eigenschappen.
+Stap 11:print je hebt geen toegang
+Stap 12: licht de beveiliging en politie in
+Stap 13: (print op einde van de dag op het scherm) stop het programma vervolgens print hij op het
+scherm aantal gecontroleerde kentekens en de aantallen OK en VERSCHIL
+Stap 14: apparaat uit tijdens sluitingstijd
+Stap 15: Einde
