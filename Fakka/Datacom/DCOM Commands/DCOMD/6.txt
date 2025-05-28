@@ -1,0 +1,3 @@
+SELECT kenteken, merk
+FROM RDW
+WHERE cilinderinhoud > (SELECT AVG(cilinderinhoud) FROM RDW);

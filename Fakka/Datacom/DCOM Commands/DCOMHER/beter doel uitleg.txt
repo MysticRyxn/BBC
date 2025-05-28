@@ -1,0 +1,18 @@
+Een systeem dat de voertuigen bij de slagboom controleert op kenteken versus type auto en signaleert als die niet overeenkomen.>
+
+Aanpak
+< Je hebt een toegangspoort waar auto's doorheen moeten rijden. Om deze auto's te controleren, heb je een IoT-apparaat dat is uitgerust met geavanceerde kunstmatige intelligentie. Dit apparaat is in staat om het kenteken, merk, type en kleur van elke auto die voorbij komt te herkennen. De gegevens die door het IoT-apparaat worden verzameld, worden opgeslagen in een bestand genaamd "GescandeData.csv".
+
+Naast het IoT-apparaat heb je ook een database genaamd "Poortwachter". In deze database is er een ander bestand genaamd "RDW.csv", dat de gegevens van verschillende kentekens bevat. Dit bestand wordt gebruikt om de kentekens en bijbehorende gegevens te controleren.
+
+Op het werkstation bij de toegangspoort draait een applicatie die toegang heeft tot een map waarin de genoemde bestanden zijn opgeslagen. Deze applicatie fungeert als de controleur van de toegangspoort.
+
+Wanneer de applicatie wordt gestart, verschijnt er een melding om aan te geven dat het programma actief is en klaar is om auto's te controleren.
+
+Wanneer een auto voor de slagboom staat, wordt het kenteken geanalyseerd door de applicatie. Als het kenteken overeenkomt met een van de kentekens in het "RDW.csv" bestand, wordt het kenteken afgedrukt met het label "OK". Dit betekent dat de auto toestemming heeft om door de poort te gaan.
+
+Als het kenteken niet overeenkomt met een van de kentekens in het bestand, wordt het kenteken afgedrukt met het label "VERSCHIL". Onder het kenteken wordt een duidelijk en net lijstje weergegeven waarin de geobserveerde eigenschappen van de auto worden vergeleken met de geregistreerde eigenschappen in het "RDW.csv" bestand.
+
+Om het programma te beëindigen, kan een teken met de waarde "EINDE" worden ingevoerd. Op dat moment wordt er een melding weergegeven om aan te geven dat het programma wordt afgesloten. Het totale aantal gecontroleerde kentekens en het aantal kentekens met "OK" en "VERSCHIL" worden getoond. Daarna wordt het programma gestopt.
+
+Dit is de beginsituatie voor de applicatie bij de toegangspoort, waarbij de wensen zijn beschreven zonder gebruik van code.
