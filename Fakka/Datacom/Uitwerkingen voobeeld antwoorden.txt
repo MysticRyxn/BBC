@@ -1,0 +1,123 @@
+
+Controle Item 
+
+Apparaten 
+
+Welke tools gebruikt? 
+
+Hoe heb je dit uitgevoerd? 
+
+Resultaat 
+
+Afwijking (indien geconstateerd) of advies 
+
+Trunking staat aan alleen voor VLAN 20,21, 22,23 & 30 
+
+SW1-SW3 
+
+CLI via SSH 
+
+Show interfaces trunk en show running-config 
+
+Niet alle vlan zijn actief op trunkpoorten. Vlan 21,22 zijn niet actief 
+
+Voeg de vlans 21,22 toe aan trunkpoorten 
+
+Telnet is uitgeschakeld 
+
+SW1-SW3 
+
+CLI via SSH 
+
+Show running-config 
+
+Line vty 
+
+Alleen ssh ingeschakeld, geen transport input telnet 
+
+Wachtwoorden zijn versleuteld opgeslagen 
+
+Main_L3, SW1-Sw3, SW_Core, SW_back_01, Edge & Firewall 
+
+CLI via SSH 
+
+Show running-config 
+
+(controle op aanwezigheid van service password-encryption 
+
+Op alle apparaten zijn de wachtwoorden versleuteld 
+
+Geen afwijkingen 
+
+Er kan alleen via SSH remote ingelogd worden 
+
+Main_L3, SW1-Sw3, SW_Core, SW_back_01, Edge & Firewall 
+
+CLI via SSH 
+
+Show running-config alleen op VTY lijnen 
+
+Transport input ssh aanwezig 
+
+Geen afwijkingen 
+
+Werkplek PC’s kunnen op Intranet webpagina 
+
+Werkplekken 
+
+Webbrowser, ping 
+
+ 
+
+ 
+
+ 
+
+Privileged Exec (enable) mode is ingeschakeld 
+
+Main_L3, SW1-SW3, SW_Core, SW_back_01, Edge & Firewall 
+
+CLI via SSH 
+
+Show privilege 
+
+Level 15  
+
+Geen afwijkingen 
+
+NTP Server is geconfigureerd  
+
+Main_L3, SW1-Sw3, SW_Core, SW_back_01, Edge & Firewall 
+
+CLI via SSH 
+
+Show ntp status en show running config  
+
+Synchronisatie unsuccesfol 
+
+Configureer NTP Server 
+
+Logging naar Syslog server is geconfigureerd 
+
+Main_L3, SW1-Sw3, SW_Core, SW_back_01, Edge & Firewall 
+
+CLI via SSH 
+
+Show logging 
+
+Syslog ip staat niet correct ingesteld 
+
+Configureer syslog server 
+
+Controleer IOS versie 
+
+Main_L3, SW1-Sw3, SW_Core, SW_backone, Edge & Firewall 
+
+CLi van device via SSH 
+
+Device# show running-config 
+
+Zie netwerk documentatie  
+
+ 
+

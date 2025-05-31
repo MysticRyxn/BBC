@@ -1,0 +1,10 @@
+show arp
+show ip int brief
+show vlan
+show mac address-table
+show run
+syslog aan
+show interfaces switchport
+show logging
+show ntp status
+show privilege
