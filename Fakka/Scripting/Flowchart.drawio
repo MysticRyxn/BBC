@@ -1,0 +1,160 @@
+<mxfile host="Electron" modified="2025-06-05T08:22:28.203Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="-L1At6UmapO5fPheP9TL" version="21.6.8" type="device">
+  <diagram name="Page-1" id="NffyKVaEtJ_ABOyRjOce">
+    <mxGraphModel dx="712" dy="1996" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-1" value="1. Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="-10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="C4oyhgmAW4sLjKYDJ80R-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="369" as="targetPoint" />
+            <mxPoint x="390" y="290" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.45;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-4" target="C4oyhgmAW4sLjKYDJ80R-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-4" value="2. Wachten op volgende auto." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-6" target="C4oyhgmAW4sLjKYDJ80R-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-6" value="3. Scan kenteken, merk, type, kleur" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="349" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-7" target="C4oyhgmAW4sLjKYDJ80R-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-7" value="4. Sla gescande gegevens op op GescandeData.csv" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="439" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.815;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-9" target="C4oyhgmAW4sLjKYDJ80R-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="589" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-9" value="5. Wordt het commando einde gegeven?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="529" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="639" as="sourcePoint" />
+            <mxPoint x="470" y="669" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-14" value="NEE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="430" y="609" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-15" value="JA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="515" y="559" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="474" y="769" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-17" value="6. Haal nieuwste scan uit GescandeData.csv" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="669" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-20" target="C4oyhgmAW4sLjKYDJ80R-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-20" value="7. Zoek kenteken op RDW.csv op Database Poortwachter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="759" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-21" target="C4oyhgmAW4sLjKYDJ80R-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-21" value="8. Vergelijk gescande gegevens bij RDW-data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="412" y="849" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-24" value="9. Komen alle gegevens overeen?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="417" y="959" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="939" as="sourcePoint" />
+            <mxPoint x="560" y="1099" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="939" as="sourcePoint" />
+            <mxPoint x="390" y="1099" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-29" value="JA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1039" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-30" value="NEE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1039" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-32" target="C4oyhgmAW4sLjKYDJ80R-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="221" y="1134" />
+              <mxPoint x="221" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-32" value="10. Print &quot;OK&quot; en geef toegang" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1099" width="136" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-33" target="C4oyhgmAW4sLjKYDJ80R-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="721" y="1134" />
+              <mxPoint x="721" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-33" value="11. Print &quot;VERSCHIL&quot; uit met details" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1099" width="134" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-34" target="C4oyhgmAW4sLjKYDJ80R-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-34" target="C4oyhgmAW4sLjKYDJ80R-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-34" value="1.1 Startmelding van programma." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-39" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;2.1Auto arriveert bij slagboom&lt;/span&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-46" target="C4oyhgmAW4sLjKYDJ80R-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-46" value="12. EINDE&amp;nbsp;&lt;br&gt;Toon totaal OK/VERSCHIL en aantaal kentekens&amp;nbsp;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="392" y="1220" width="138" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-47" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.441;exitY=0.971;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-32" target="C4oyhgmAW4sLjKYDJ80R-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="1350" as="sourcePoint" />
+            <mxPoint x="500" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-48" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.396;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="C4oyhgmAW4sLjKYDJ80R-33" target="C4oyhgmAW4sLjKYDJ80R-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="1350" as="sourcePoint" />
+            <mxPoint x="500" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4oyhgmAW4sLjKYDJ80R-49" value="13. Stop" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="421" y="1340" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
