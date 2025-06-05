@@ -1,87 +1,78 @@
-k# programma KentekenCheck
+# programma KentekenCheck
 # Versie: 1.2
 # Auteur: B. van der Feen
 # Edit: M. van Hoek
-# Datum:  14/7/2022
-#
-#
+# Datum: 14/7/2022
 
 from datetime import datetime
 
-# OPDRACHT
-#
-# Maak de variabele appPath aan en gebruik die om op één plek om het pad te definieren voor alle bestanden.
-# Gebruik vervolgens appPath overal bij het verwijzen naar het pad van de bestanden.
-# Doe dit voor eventuele nieuwe verwijzingen én vervang de bestaande verwijzingen in deze code.
+# OPDRACHT: Maak variabele appPath voor paddefinitie
+appPath = "C:\\Users\\administrator\\KentekenCheck\\"
 
-print("= = =  programma kentekensignalering gestart = = = ") 
+print("= = =  programma kentekensignalering gestart = = =")
 
-# OPDRACHT
-#
-# Druk de huidige datum en tijd af
+# OPDRACHT: Druk de huidige datum en tijd af
+print(datetime.now())
 
-rdwInput = open("C:\\Users\\administrator\\KentekenCheck\\RDW.csv")
-scanInput = open("C:\\Users\\administrator\\KentekenCheck\\GescandeData.csv")
-aantalVerwerkt = aantalFout = 0
-legenVals = ""
+rdwInput = open(appPath + "RDW.csv")
+scanInput = open(appPath + "GescandeData.csv")
+aantalVerwerkt = 0
+aantalFout = 0
 
-# OPDRACHT
-#
-# Vraag hier of het bestand vals.txt leeg gemaakt moet worden (j of n)
-# Sla de keuze op in de variabele legenVals
+# OPDRACHT: Vraag of vals.txt moet worden geleegd en sla op in legenVals
+legenVals = input("Bestand vals.txt leegmaken? (j/n): ").lower()
 
-
-if legenVals  == "n":       #open nieuw, of toevoegen aan vals.txt
-    signaleringen = open("C:\\Users\\administrator\\KentekenCheck\\" , "a")
+# Bestand openen op basis van keuze
+if legenVals == "n":
+    signaleringen = open(appPath + "vals.txt", "a")
 else:
-    signaleringen = open("C:\\Users\\administrator\\KentekenCheck\\" , "w")
+    signaleringen = open(appPath + "vals.txt", "w")
 
-
-for auto in scanInput:       #lezen rij voor rij vanuit ScanDevice - GescandeData.csv
-    if len(auto) < 10:       #Records korter dan 10 overslaan
+for auto in scanInput:  # Lezen rij voor rij vanuit GescandeData.csv
+    if len(auto) < 10:  # Records korter dan 10 overslaan
         continue
-                                 
-    autoDelen = auto.split(",") #Record opsplitsen in losse velden van tabel autoDelen 
+
+    autoDelen = auto.strip().split(",")  # Strip \n en splits veld
     scanKenteken = autoDelen[0]
     scanMerk = autoDelen[1]
     scanType = autoDelen[2]
-    scanType = scanType.replace("\n", "")  #vervang de eventuele \n achter type
-    aantalVerwerkt = aantalVerwerkt + 1
-    
-    match = 0                   #er is nog geen match gevonden
-    rdwInput.seek(0)            #starten aan het begin van het bestand
-    for rdwAuto in rdwInput:    #lezen rij voor rij uit RDW.csv
-        rdwAutoDelen=rdwAuto.split(",")
+    aantalVerwerkt += 1
+
+    match = 0  # Nog geen match
+    rdwInput.seek(0)  # Begin RDW.csv vanaf boven
+    for rdwAuto in rdwInput:
+        rdwAutoDelen = rdwAuto.strip().split(",")
         rdwKenteken = rdwAutoDelen[0]
         rdwMerk = rdwAutoDelen[2]
         rdwType = rdwAutoDelen[3]
 
-        # OPDRACHT
-        #
-        # Als kentekens overeenkomen, dan wordt match op 1 gezet
-        # en moet gestopt worden met zoeken in RDW.txt
-                       
-    if match == 0:              #einde bestand bereikt en kenteken onbekend
-        aantalFout = aantalFout + 1
-        print ("Onbekend kenteken: ", scanKenteken, scanMerk, scanType, "\n\n")
-        signaleringen.write("Onbekend," + scanKenteken + "," + scanMerk + "," + scanType + "\n")
-    else:                       #kenteken gevonden
-        if scanMerk != rdwMerk or scanType != rdwType:  #merk of type onjuist
-            aantalFout=aantalFout + 1
-            print ("Onjuist kenteken:", scanKenteken, scanMerk, scanType)
-            print ("Geregistreerd op:", rdwKenteken, rdwMerk, rdwType, "\n\n")
-            signaleringen.write("Onjuist," + scanKenteken + "," + scanMerk + "," + scanType + "\n")
-                                #afsluitend de aantallen weergeven
-print("Eindtotalen KentekenCheck" )
+        # OPDRACHT: Als kentekens gelijk zijn → match = 1 en break
+        if scanKenteken == rdwKenteken:
+            match = 1
+            break
 
-# OPDRACHT
-#
-# print het aantal correcte kentekens
-# print het aantal onjuiste kentekens
-# sluit de drie bestanden
+    if match == 0:  # Kenteken onbekend
+        aantalFout += 1
+        print("Onbekend kenteken:", scanKenteken, scanMerk, scanType, "\n")
+        signaleringen.write("Onbekend," + scanKenteken + "," + scanMerk + "," + scanType + "\n")
+    else:  # Kenteken gevonden maar mogelijk fout in merk/type
+        if scanMerk != rdwMerk or scanType != rdwType:
+            aantalFout += 1
+            print("Onjuist kenteken:", scanKenteken, scanMerk, scanType)
+            print("Geregistreerd op:", rdwKenteken, rdwMerk, rdwType, "\n")
+            signaleringen.write("Onjuist," + scanKenteken + "," + scanMerk + "," + scanType + "\n")
+
+# Eindtotalen
+print("Eindtotalen KentekenCheck")
+# OPDRACHT: print correcte en onjuiste kentekens
+print("Aantal correcte kentekens:", aantalVerwerkt - aantalFout)
+print("Aantal onjuiste kentekens:", aantalFout)
+
+# OPDRACHT: sluit de drie bestanden
+rdwInput.close()
+scanInput.close()
+signaleringen.close()
 
 print("= = =  programma kentekensignalering afgesloten = = =")
-
-# OPDRACHT
-#
-# Druk de huidige datum en tijd af
+# OPDRACHT: Druk de huidige datum en tijd af
+print(datetime.now())
